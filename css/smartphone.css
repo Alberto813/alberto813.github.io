@@ -1,0 +1,137 @@
+:root {
+    --color-uno: #333;
+    --color-dos: #222;
+    --color-three: #fff;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+header {
+    width: 100vw;
+    height: 48px;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--color-dos);
+}
+header .header--logo {
+    width: 48px;
+    height: 48px;
+}
+main {
+    width: 100%;
+}
+main .main--portada {
+    top: 48px;
+    width: 100%;
+    min-height: 200px;
+    height: 25%;
+    background-image: url("../assets/img/portadaArcane.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    z-index: 1;
+}
+main .main--informacion, .main--capitulos {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-uno);
+    top: 248px;
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 32px;
+    color: var(--color-three);
+}
+main .main--informacion {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.main--informacion h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.8rem;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+main .main--informacion li {
+    list-style: none;
+    display: inline;
+    font-size: 1.2rem;
+}
+main .main--informacion li::after {
+    content: " | ";
+}
+main .main--informacion p {
+    margin-top: 8px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.8rem;
+}
+main .main--capitulos iframe {
+    border: none;
+}
+main .main--capitulos .capitulos--titulo li {
+    display: inline;
+    font-size: 1.4rem;
+    position: relative;
+    left: calc(25% - 80px);
+    width: fit-content;
+}
+main .main--capitulos .capitulos--titulo li::after {
+    content: " | ";
+}
+main .main--capitulos .capitulos--contenedor {
+    width: 100%;
+    padding-top: 32px;
+    display: flex;
+    gap: 54px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main .main--capitulos .capitulos--contenedor .capitulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    flex-wrap: wrap;
+}
+main .main--capitulos .capitulos--contenedor .capitulos iframe {
+    min-width: 320px;
+    width: 90%;
+    max-width: 400px;
+    height: 180px;
+}
+main .main--capitulos .capitulos--contenedor .capitulos h2 {
+    align-self: flex-start;
+    font-size: 2rem;
+    position: relative;
+    left: 20px;
+    top: 8px;
+    min-width: 300px;
+    width: 80%;
+    font-weight: 700;
+}
+main .main--capitulos .capitulos--contenedor .capitulos .time {
+    align-self: flex-end;
+    font-size: 1.4rem;
+    position: relative;
+    right: 22px;
+    top: -9px;
+    font-weight: 300;
+}
+main .main--capitulos .capitulos--contenedor .capitulos .descripcion {
+    align-self: flex-start;
+    font-size: 1.4rem;
+    position: relative;
+    left: 20px;
+    min-width: 300px;
+    width: 80%;
+    font-weight: 500;
+}
