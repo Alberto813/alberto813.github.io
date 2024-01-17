@@ -27,7 +27,7 @@ jobs:
           node-version: 18 # La versión específica de Node que debería usarse para construir tu sitio. Por defecto es 18. (opcional)
           package-manager: npm@latest # El gestor de paquetes de Node que debería usarse para instalar dependencias y construir tu sitio. Detectado automáticamente basado en tu lockfile. (opcional)
 
-  deploy:gi
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
