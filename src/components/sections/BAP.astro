@@ -1,5 +1,5 @@
 ---
-import BundlesCards from "../cards/BundlesCards.astro";
+import BundlesCards from "../cards/bundlesCards.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
@@ -29,9 +29,9 @@ type BundlesCardsProps = {
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {
-                    bundles.map((BundlesCards: BundlesCardsProps) => {
+                    bundles.map((bundlesCards: BundlesCardsProps) => {
                     return (
-                            <BundlesCards>
+                            <BundlesCards title={bundlesCards.title} description={bundlesCards.description} icon={bundlesCards.icon} people={bundlesCards.people} price={bundlesCards.price}>
                             </BundlesCards>
                             );
                     })
