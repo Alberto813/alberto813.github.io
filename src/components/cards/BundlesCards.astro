@@ -2,24 +2,28 @@
 import Paragraph from '../shared/Paragraph.astro';
 
 export interface Props{
-    title:string,
-    description:string,
-    icon: string,
+    pack:string,
+    desc:string,
+    icone: string,
+    people: string,
+    price: string,
 }
 
-const {title, description, icon} = Astro.props
+const {pack, desc, icone, people, price} = Astro.props
 ---
 <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
     <div class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 relative w-12">
-            <img src={icon} alt="icono">
+            <img src={icone} alt="icono">
     </div>
     <div class="mt-6 space-y-4 relative">
         <h2 class="text-lg md:text-xl font-semibold text-heading-2">
-            {title}
+            {pack}
         </h2>
         <Paragraph>
-            {description}
+            {desc}
         </Paragraph>
+        <p>Personas: {people}</p>
+        <p>Costo: {price}</p>
     </div>
     <span class="absolute w-32 aspect-square -bottom-16 -right-16 bg-primary/10 rounded-full"></span>
 </div>
