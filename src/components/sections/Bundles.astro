@@ -1,0 +1,39 @@
+---
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import Title from "../shared/Title.astro";
+import { bundles } from "../../utils/bundles"
+import Bundle from "../cards/Bundle.astro";
+
+
+type BundlesProps = {
+    title: string;
+    description: string;
+    icon: string;
+    people: string;
+    price: string
+};
+---
+
+<section id="services">
+    <Container className="space-y-10 md:sapce-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <Title>
+                PAQUETES DISPONIBLES
+            </Title>
+            <Paragraph>
+                El mejor entretenimiento para pasar en familia.
+            </Paragraph>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {
+                    bundles.map((bundle: BundlesProps) => {
+                    return (
+                            <Bundle title={bundle.title} description={bundle.description} icon={bundle.icon} people={bundle.people} price={bundle.price}>
+                            </Bundle>
+                            );
+                    })
+            }
+        </div>
+    </Container>
+</section>
