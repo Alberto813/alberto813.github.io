@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { bundles } from '../../utils/bundles';
+
+type bundleProps = {
+    title:string
+    description: string;
+    icon: string;
+    people: string;
+    price: string
+}
+const bundle1 = bundles[0].title;
+---
+
+<Layout title=`${bundle1.toLocaleUpperCase()}` >
+
+</Layout>
