@@ -2,12 +2,15 @@
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
+import SpecialButton from "../shared/SpecialButton.astro";
 
 export interface Props {
-  title:string
-  description?:string
+  title:string,
+  description?:string,
+  people:string,
+  price:string,
 }
-const { title, description } = Astro.props
+const { title, description, people, price } = Astro.props
 let info
 if (!description) {
   info = "parrafo de prueba"
@@ -16,8 +19,8 @@ if (!description) {
 }
 ---
 
-<section  id="cta" class="pb-20 pt-32 lg:pt-36">
-  <Container>
+<section class="pb-20 pt-32 lg:pt-36">
+  <Container className="px-5 sm:px-8 md:px-14 lg:px-5">
     <div
       class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
     >
@@ -55,13 +58,22 @@ if (!description) {
         <Paragraph className={"pt-10"}>
           {info}
         </Paragraph>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
           <slot/>
         </div>
+        <Paragraph className={"pt-10"}>
+          {people}
+        </Paragraph>
+        <Paragraph className={"pt-10"}>
+          {price}
+        </Paragraph>
         <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-          <Button variant={"primary"}>
-            <span class="text-white relative z-[5]">Reserva hoy!</span>
-          </Button>
+          <SpecialButton>
+            <div class="relative z-10 flex items-center justify-center text-lg font-semibold text-white pointer-events-none md:text-xl">
+              <svg class="mr-3" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 5l0 2"></path><path d="M15 11l0 2"></path><path d="M15 17l0 2"></path><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"></path></svg>
+              Reserva Hoy!
+            </div>
+          </SpecialButton>
         </div>
       </div>
     </div>
