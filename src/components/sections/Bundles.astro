@@ -7,6 +7,7 @@ import Bundle from "../cards/Bundle.astro";
 
 
 type BundlesProps = {
+    id: string,
     title: string;
     description: string;
     icon: string;
@@ -29,7 +30,7 @@ type BundlesProps = {
             {
                     bundles.map((bundle: BundlesProps) => {
                     return (
-                            <Bundle title={bundle.title} description={bundle.description} icon={bundle.icon} people={bundle.people} price={bundle.price}>
+                            <Bundle id={bundle.id} title={bundle.title} description={bundle.description} icon={bundle.icon} people={bundle.people} price={bundle.price}>
                             </Bundle>
                             );
                     })
