@@ -2,6 +2,7 @@
 import Paragraph from '../shared/Paragraph.astro';
 
 export interface Props{
+    id: string,
     title:string,
     description:string,
     icon: string,
@@ -9,9 +10,10 @@ export interface Props{
     price: string
 }
 
-const {title, description, icon, people, price} = Astro.props
+const {id, title, description, icon, people, price} = Astro.props
 ---
-<a href={`/info/${title.replace(" ", "")}`} class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
+
+<a href={`/info/${id}`} class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
     <div class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 relative w-12">
         <slot set:html={icon} />
     </div>

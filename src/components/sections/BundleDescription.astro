@@ -2,14 +2,11 @@
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-import { bundles } from '../../utils/bundles';
-import Item from "../cards/Item.astro";
 
 export interface Props {
   title:string
   description?:string
 }
-const bundle1 = bundles[0];
 const { title, description } = Astro.props
 let info
 if (!description) {
@@ -59,12 +56,7 @@ if (!description) {
           {info}
         </Paragraph>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <!-- {
-            bundle1.itemsIncluded.map(item => {
-              <h2>{item}</h2>
-            })
-          } -->
-          {bundle1.itemsIncluded.map((item) => <h2 class="text-white">{item}</h2>)}
+          <slot/>
         </div>
         <div class="mx-auto max-w-md sm:max-w-xl pt-10">
           <Button variant={"primary"}>
