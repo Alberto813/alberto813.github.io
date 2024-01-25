@@ -59,14 +59,13 @@ if (!description) {
           {info}
         </Paragraph>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {
-            bundle1.itemsIncluded.forEach(item => {
-                return (
-                   console.log(item)
-                )
+          <!-- {
+            bundle1.itemsIncluded.map(item => {
+              <h2>{item}</h2>
             })
-        }
-      </div>
+          } -->
+          {bundle1.itemsIncluded.map((item) => <h2 class="text-white">{item}</h2>)}
+        </div>
         <div class="mx-auto max-w-md sm:max-w-xl pt-10">
           <Button variant={"primary"}>
             <span class="text-white relative z-[5]">Reserva hoy!</span>
