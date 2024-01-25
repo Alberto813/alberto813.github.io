@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { bundles } from '../../utils/bundles';
+import BundleDescription from '../../components/sections/BundleDescription.astro'
+
+export const getBundleBy = async ({id}: {id: string}) => {
+    let res
+    bundles.map(bundle => {
+        if (bundle.id == id) {
+            res = bundle
+        }
+    })
+    return res
+}
+const { id } = Astro.params
+
+let bundle
+if (id) {
+    bundle = await getBundleBy({ id })
+}
+
+console.log(bundle)
+
+export function getStaticPaths() {
+    return bundles.map(bundle => ({
+        params: {id: bundle.id},
+    }))
+}
+---
+
+<Layout title={id}>
+    <BundleDescription title={bundle?.title}>
+        {bundle?.itemsIncluded.map((item) => <h2 class="text-white">{item}</h2>)}
+    </BundleDescription>
+</Layout>
