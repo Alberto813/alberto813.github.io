@@ -14,7 +14,7 @@ export const getBundleBy = async ({id}: {id: string}) => {
 }
 const { id } = Astro.params
 
-let bundle
+let bundle: any
 if (id) {
     bundle = await getBundleBy({ id })
 }
@@ -30,6 +30,6 @@ export function getStaticPaths() {
 
 <Layout title={id}>
     <BundleDescription title={bundle?.title}>
-        {bundle?.itemsIncluded.map((item) => <h2 class="text-white">{item}</h2>)}
+        {bundle?.itemsIncluded.map((item: string) => <h2 class="text-white">{item}</h2>)}
     </BundleDescription>
 </Layout>
