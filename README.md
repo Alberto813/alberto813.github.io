@@ -24,4 +24,3 @@ npm run astro add tailwind
 
 ## ESTRUCTURA GENERAL DEL PROYECTO
 Dentro del proyecto hay una estructura simple donde el contenedor principal es el `Layout`, en el cual se construiran cada una de las paginas necesarias, despues estan las paginas, son las que utilizaran el layout e incrustaran todos los componentes que se deseen mostrar; `index.astro` es la pagina principal donde se encuentra informacion resumida con enlaces a paginas adicionales con la informaccion completa. Cuenta con una barra de navegacion con diversos enlaces: `Inicio Juegos Premios Cafeteria Paquetes Sobre Nostros`
----
