@@ -1,0 +1,47 @@
+---
+import Container from "../shared/Container.astro";
+import { extrasBundles } from "../../utils/extrasBundles";
+import { pktsnack } from "../../utils/pktsnack";
+
+type extra = {
+    id: string,
+    name: string,
+    price: string,
+}
+---
+
+
+<section class="extras-bundles">
+    <Container>
+        <h2 class="text-heading-1 text-center">Extras para tus paquetes</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
+            {
+                extrasBundles.map((bundle: extra) => {
+                    return (
+                        <ul>
+                            <li class="text-heading-1">{bundle.name}</li>
+                            <li class="text-heading-1">{bundle.price}</li>
+                        </ul>
+                    )
+                })
+            }
+        </div>
+    </Container>
+</section>
+<section class="extras-bundles">
+    <Container>
+        <h2 class="text-heading-1 text-center">Paquetes SNACKS</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
+            {
+                pktsnack.map((pkt: extra) => {
+                    return (
+                        <ul>
+                            <li class="text-heading-1">{pkt.name}</li>
+                            <li class="text-heading-1">{pkt.price}</li>
+                        </ul>
+                    )
+                })
+            }
+        </div>
+    </Container>
+</section>
