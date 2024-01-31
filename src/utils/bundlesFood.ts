@@ -71,3 +71,5 @@ const bundlesFood = [
         price: "$185 MXN",
     },
 ]
+
+export { bundlesFood };
