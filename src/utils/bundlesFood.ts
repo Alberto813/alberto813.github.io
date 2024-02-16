@@ -2,6 +2,7 @@ const bundlesFood = [
     {
         id: "com01",
         name: "Combo Hot Dog",
+        image: "/images/s-l960.jpg",
         items: [{
                 name: "Hot dog",
                 qty: "1",
