@@ -3,6 +3,7 @@ import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import { bundlesFood } from "../../utils/bundlesFood";
+import FoodArticle from "../cards/FoodArticle.astro";
 
 type bundleFoodProps = {
     id: string,
@@ -12,23 +13,16 @@ type bundleFoodProps = {
 }
 ---
 
-<section>
-    <Container>
-        <Title> Combos de comida </Title>
-        <Paragraph> Disfruta de una gran variedad de comida a tu eleccion </Paragraph>
-        <div class="flex overflow-x-scroll snap-x">
-            {
-                bundlesFood.map((bundle: bundleFoodProps) => {
-                    return(
-                    <article class=" m-5 relative min-w-[200px] border-yellow-300 hover:border-yellow-200 flex flex-col items-center overflow-hidden rounded-xl border bg-slate-800/50 w-full h-64 transition hover:bg-slate-800/75 hover:shadow-lg group">
-                        <div class="w-full h-1/2">
-                            <img src={bundle.image} alt="combo" class="h-full">
-                        </div>
-                        <h2 class=" text-white transition group-hover:scale-110">{bundle.name}</h2>
-                        <p class=" text-white transition group-hover:scale-110">{bundle.price}</p>
-                    </article>
-                    )
-                })
-            }</div>
-    </Container>
-</section>
+<Container>
+    <Title> Combos de comida </Title>
+    <Paragraph> Disfruta de una gran variedad de comida a tu eleccion </Paragraph>
+    <div class="flex overflow-x-scroll snap-x scroll-smooth scrollbar-hide">
+        {
+            bundlesFood.map((bundle: bundleFoodProps) => {
+                return(
+                    <FoodArticle image={bundle.image} name={bundle.name} price={bundle.price}/>
+                )
+            })
+        }
+    </div>
+</Container>

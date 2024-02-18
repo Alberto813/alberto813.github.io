@@ -89,3 +89,5 @@ const food = [
         price: "$70 MXN",
     }
 ]
+
+export { food }; 
