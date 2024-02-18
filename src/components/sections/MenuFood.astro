@@ -1,0 +1,45 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import { food } from "../../utils/food";
+import { drinks } from '../../utils/drinks';
+
+type FoodProps = {
+    id: string,
+    name: string,
+    price: string,
+}
+---
+
+<Container>
+    <Title>Nuestro Menu</Title>
+    <div class="text-heading-3">
+        <Paragraph>Comidas</Paragraph>
+        <table class=" border-spacing-3 border-separate">
+            {
+                food.map((food: FoodProps) => {
+                    return(
+                        <tr>
+                            <td>{food.name}</td>
+                            <td>{food.price}</td>
+                        </tr>
+                    )
+                })
+            }
+        </table>
+        <Paragraph>Bebidas</Paragraph>
+        <table class=" border-spacing-3 border-separate">
+            {
+                drinks.map((drink: FoodProps) => {
+                    return(
+                        <tr>
+                            <td>{drink.name}</td>
+                            <td>{drink.price}</td>
+                        </tr>
+                    )
+                })
+            }
+        </table>
+    </div>
+</Container>

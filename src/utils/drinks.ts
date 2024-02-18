@@ -60,3 +60,5 @@ const drinks = [
         price: "$10 MXN / $15 MXN",
     }
 ]
+
+export { drinks };
